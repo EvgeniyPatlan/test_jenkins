@@ -19,6 +19,7 @@ ls -la'''
       agent any
       steps {
         sh '''wget https://repo.percona.com/percona/apt/percona-release_1.0-7.generic_all.deb
+
 echo "sudo dpkg -i percona-release_1.0-7.generic_all.deb"
 BRANCH=$(echo ${PRODUCT} | sed -e \'s/percona-server-//\')
 if [ ${BRANCH} = 8.0 ]; then
