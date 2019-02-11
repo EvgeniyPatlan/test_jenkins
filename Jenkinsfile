@@ -4,7 +4,9 @@ pipeline {
     stage('Get Sources') {
       agent any
       steps {
-        sh 'echo "Testing ${PRODUCT} from ${REPO} repo"'
+        sh '''BRANCH=$(echo ${PRODUCT} | sed -e \'s/percona-server-//\')
+wget https://raw.githubusercontent.com/Percona-Lab/ps-build/${BRANCH}/docker/install-deps
+ls -la'''
       }
     }
   }
