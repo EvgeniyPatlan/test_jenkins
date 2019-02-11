@@ -9,8 +9,11 @@ pipeline {
 
       }
       steps {
-        sh 'mkdir test'
+        sh 'echo "Deploying to ${product}"'
       }
     }
+  }
+  parameters {
+    string(name: 'product', defaultValue: 'percona-server-5.6', description: '')
   }
 }
