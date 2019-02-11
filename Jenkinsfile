@@ -2,12 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Get Sources') {
-      agent {
-        docker {
-          image 'centos:7'
-        }
-
-      }
+      agent any
       steps {
         sh 'echo "Deploying to ${product}"'
       }
